@@ -36,14 +36,6 @@ div.special > div[class*="col-"] {
 {    background-color: #2d2d2d;
 }
 
-
-.container-fluid {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
 .row {
   margin-left: 0px;
   margin-right: 0px;

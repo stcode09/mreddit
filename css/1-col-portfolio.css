@@ -37,7 +37,9 @@ div.special > div[class*="col-"] {
 }
 
 
-.container-full {
-  margin: 0 auto;
-  width: 100%;
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }

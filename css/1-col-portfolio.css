@@ -29,9 +29,9 @@ div.special > div[class*="col-"] {
 
 .table-striped>tbody>tr:nth-child(4n+1)>td,
 .table-striped>tbody>tr:nth-child(4n+2)>td
-{    background-color: #ff10ff;
+{    background-color: #37383a;
 }
 .table-striped>tbody>tr:nth-child(4n+3)>td,
 .table-striped>tbody>tr:nth-child(4n+4)>td
-{    background-color: #00ffff;
+{    background-color: #2d2d2d;
 }

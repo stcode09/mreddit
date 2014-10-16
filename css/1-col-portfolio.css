@@ -27,7 +27,11 @@ div.special > div[class*="col-"] {
     border: none;
 }
 
-.table-striped>tbody>tr:nth-child(odd)>td, 
-.table-striped>tbody>tr:nth-child(odd)>th {
-   background-color: #f00;
- }
+.table-striped>tbody>tr:nth-child(4n+1)>td,
+.table-striped>tbody>tr:nth-child(4n+2)>td
+{    background-color: #ff10ff;
+}
+.table-striped>tbody>tr:nth-child(4n+3)>td,
+.table-striped>tbody>tr:nth-child(4n+4)>td
+{    background-color: #00ffff;
+}

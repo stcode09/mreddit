@@ -22,3 +22,7 @@ div.special > div[class*="col-"] {
        padding: 0; 
     
 }
+
+.table th, .table td { 
+     border-top: none; 
+ }

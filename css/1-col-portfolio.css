@@ -35,3 +35,9 @@ div.special > div[class*="col-"] {
 .table-striped>tbody>tr:nth-child(4n+4)>td
 {    background-color: #2d2d2d;
 }
+
+
+.container-full {
+  margin: 0 auto;
+  width: 100%;
+}

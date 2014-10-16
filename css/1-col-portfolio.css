@@ -17,3 +17,8 @@ body {
 footer {
     margin: 50px 0;
 }
+
+div.special > div[class*="col-"] {
+       padding: 2; 
+    
+}

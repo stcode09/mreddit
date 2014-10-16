@@ -19,6 +19,6 @@ footer {
 }
 
 div.special > div[class*="col-"] {
-       padding: 2; 
+       padding: 0; 
     
 }

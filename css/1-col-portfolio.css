@@ -26,3 +26,7 @@ div.special > div[class*="col-"] {
 .table th, .table td { 
      border-top: none; 
  }
+
+table td {
+    border-top: none;
+}

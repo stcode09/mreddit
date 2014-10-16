@@ -23,6 +23,6 @@ div.special > div[class*="col-"] {
     
 }
 
-.borderless td {
+.borderless tbody tr td, .borderless thead tr th {
     border: none;
 }

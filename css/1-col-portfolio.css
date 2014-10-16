@@ -26,3 +26,8 @@ div.special > div[class*="col-"] {
 .borderless tbody tr td, .borderless thead tr th {
     border: none;
 }
+
+.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: #f00;
+ }

@@ -37,11 +37,11 @@
                     var str =   "<tr>" +
                                 "<td rowspan='2'>" +
                                 "<img width='70px' height='70px' class='img-rounded' src='" + data.thumbnail + "'>" +
-                                "<div><p><br>" + data.score + "</p><p>" + data.subreddit + "</p></div>" +
+                                "<div><p><br>" + data.score + "</p></div>" +
                                 "</td>" +
                                 "<td><p>" + data.title + "</td></tr>" +
                                 "<tr style='border-bottom: 1px solid white;'>" +
-                                "<td><a class='pull-left'>by " + data.author + "</a><a class='pull-right'>" + data.num_comments + " comments</a></td>"
+                                "<td><p>" data.num_comments + "comments</p><p>by " + data.author + "</p><p>to " + data.subreddit + "</p></td>"
                                 "</tr>";
                     stuff.insertAdjacentHTML( 'beforeend', str );
                 }

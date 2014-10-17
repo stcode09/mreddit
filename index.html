@@ -34,9 +34,8 @@
             reddit.hot().limit(25).fetch(function (res) {
                 for(var i = 0; i < res.data.children.length; i++) {
                     var data = res.data.children[i].data;
-                    var thumbnail = document.createElement("img");
-                    thumbnail.setAttribute("src", data.thumbnail);
-                    stuff.appendChild(thumbnail);
+                    var str = "<tr><td><img width='70px' height='70px' class='img-rounded' src='" + data.thumbnail + "'></td></tr>";
+                    stuff.appendChild(str);
                 }
             });
             

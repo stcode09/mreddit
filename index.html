@@ -40,9 +40,12 @@
                                 "<div><p class='text-center'><br>" + data.score + "</p></div>" +
                                 "</td>" +
                                 "<td><p>" + data.title + "</p></td></tr>" +
-                                (i == res.data.length - 1) ? "<tr>" : "<tr style='border-bottom: 1px solid white;'>";
-                                +
-                                "<td><p>" + data.num_comments + " comments</p><p>by " + data.author + "</p><p>to " + data.subreddit + "</p></td>"
+                                if (i == res.data.length - 1) {
+                                    "<tr>";
+                                } else {
+                                    "<tr style='border-bottom: 1px solid white;'>";
+                                }
+                                + "<td><p>" + data.num_comments + " comments</p><p>by " + data.author + "</p><p>to " + data.subreddit + "</p></td>"
                                 "</tr>";
                     stuff.insertAdjacentHTML( 'beforeend', str );
                 }

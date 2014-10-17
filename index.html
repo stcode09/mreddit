@@ -18,6 +18,18 @@
 
     <!-- Custom CSS -->
     <link href="css/1-col-portfolio.css" rel="stylesheet">
+    
+    <script src="js/reddit.min.js"></script>
+    
+    <script>
+        
+        function loadContent(name) {
+            if(name == "default") {
+                document.write("Hello");
+            }
+        }
+        
+    </script>    
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -28,7 +40,7 @@
 
 </head>
 
-<body>
+<body onload="loadContent('default')">
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -79,6 +91,7 @@
         
         <table class="table borderless">
               <tbody id="stuff">
+                <!--
                 <tr>
                   <td rowspan="2">
                   <img width="70px" height="70px" class="img-rounded" src="http://b.thumbs.redditmedia.com/W4L5GJcs-oj0q_EgrQ0ZGxhePbq4Y9KzBp7v_f1uMcg.jpg" alt="">
@@ -108,7 +121,8 @@
                 </tr>
                 <tr>
                     <td><a class="pull-left">by Author</a> <a class="pull-right">Comments</a></td>
-                </tr>
+                </tr> 
+                -->
               </tbody>
         </table>
         <!-- /.row -->

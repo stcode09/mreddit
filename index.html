@@ -24,8 +24,12 @@
     <script>
         
         function loadContent(name) {
-            if(name == "default") {
+            if(name == "") {
                 document.getElementById("heading").innerText = "front page";
+                var stuff = document.getElementById("stuff");
+                reddit.hot(name).limit(25).fetch(function (res) {
+                    
+                });
             }
         }
         
@@ -40,7 +44,7 @@
 
 </head>
 
-<body onload="loadContent('default')">
+<body onload="loadContent('')">
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->

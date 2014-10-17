@@ -34,7 +34,11 @@
             reddit.hot().limit(25).fetch(function (res) {
                 for(var i = 0; i < res.data.children.length; i++) {
                     var data = res.data.children[i].data;
-                    var str = "<tr><td><img width='70px' height='70px' class='img-rounded' src='" + data.thumbnail + "'></td></tr>";
+                    var str =   "<tr>" +
+                                "<td rowspan='2'>" +
+                                "<img width='70px' height='70px' class='img-rounded' src='" + data.thumbnail + "'>" +
+                                "<div><p class='text-cented'><br>" + data.score + "</p><p class='text-center'>" + data.subreddit + "</p></div>";
+                                "</td></tr>";
                     stuff.insertAdjacentHTML( 'beforeend', str );
                 }
             });

@@ -61,11 +61,13 @@
         }
         
         function showLoading(stuff) {
+            var center = document.createElement("center");
             var img = document.createElement("img");
+            img.setAttribute("width", "50%");
+            img.setAttribute("height", "50%");
             img.setAttribute("src", "http://media.giphy.com/media/IgQ8E05Dpg2ze/giphy.gif");
-            img.setAttribute("width", "25%");
-            img.setAttribute("height", "25%");
-            stuff.appendChild(img);
+            center.appendChild(img);
+            stuff.appendChild(center);
         }
         
         function loadContent(name, newSubreddit, more) {

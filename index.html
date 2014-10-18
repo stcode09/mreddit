@@ -97,7 +97,6 @@
                     for(var i = 0; i < res.data.children.length; i++) {
                         var data = res.data.children[i].data;
                         var str = writeHTML(data);
-                        hideLoading(stuff);
                         stuff.insertAdjacentHTML('beforeend', str);
                         (i == res.data.children.length - 1) ? after = data.name : "";
                     }

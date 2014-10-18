@@ -81,6 +81,7 @@
             document.getElementById("heading").innerText = name;
             var stuff = document.getElementById("stuff");
             if(more) {
+                showLoading(stuff);
                 reddit.hot(name).after(after).limit(25).fetch(function (res) {
                     for(var i = 0; i < res.data.children.length; i++) {
                         var data = res.data.children[i].data;
@@ -89,17 +90,19 @@
                         (i == res.data.children.length - 1) ? after = data.name : "";
                     }
                 });
+                hideLoading(stuff);
             } else {
+                showLoading(stuff);
                 reddit.hot(name).limit(25).fetch(function (res) {
                     for(var i = 0; i < res.data.children.length; i++) {
-                        showLoading(stuff);
                         var data = res.data.children[i].data;
                         var str = writeHTML(data);
                         hideLoading(stuff);
                         stuff.insertAdjacentHTML('beforeend', str);
                         (i == res.data.children.length - 1) ? after = data.name : "";
                     }
-                }); 
+                });
+                hideLoading(stuff);
             }
         }
         

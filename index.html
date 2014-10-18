@@ -95,7 +95,7 @@
                         showLoading(stuff);
                         var data = res.data.children[i].data;
                         var str = writeHTML(data);
-                        removeLoading(stuff);
+                        hideLoading(stuff);
                         stuff.insertAdjacentHTML('beforeend', str);
                         (i == res.data.children.length - 1) ? after = data.name : "";
                     }

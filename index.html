@@ -41,9 +41,9 @@
         
         function writeHTML(data) {
             var thumb;
-            if(data.thumbnail === 'self' || data.thumbnail === undefined) {
+            if(data.thumbnail == 'self' || data.thumbnail == undefined) {
                 thumb = "http://www.reddit.com/static/self_default2.png";
-            } else if(data.thumbnail === 'nsfw') {
+            } else if(data.thumbnail == 'nsfw') {
                 thumb = "http://www.reddit.com/static/nsfw2.png"
             } else {
                 thumb = data.thumbnail;

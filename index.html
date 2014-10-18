@@ -90,10 +90,11 @@
             } else {
                 document.getElementById("heading").innerText = name;
                 var stuff = document.getElementById("stuff");
-                reddit.hot(name).limit(25).fetch(function (res) {
-                    for(var i = 0; i < res.data.children.length; i++) {
-                        var data = res.data.children[i].data;
-                        var str =   "<tr>" +
+                if(more) {
+                    reddit.hot(name).after(after).limit(25).fetch(function (res) {
+                        for(var i = 0; i < res.data.children.length; i++) {
+                            var data = res.data.children[i].data;
+                            var str =   "<tr>" +
                                     "<td rowspan='2'>" +
                                     "<img width='70px' height='70px' class='img-rounded' src='" + data.thumbnail + "'>" +
                                     "<div><p class='text-center'><br>" + data.score + "</p></div>" +
@@ -102,9 +103,28 @@
                                     "<tr>" +
                                     "<td><p>" + data.num_comments + " comments</p><p>by " + data.author + "</p><p>to " + data.subreddit + "</p></td>" +
                                     "</tr>";
-                        stuff.insertAdjacentHTML('beforeend', str);
-                    }
-                });
+                            stuff.insertAdjacentHTML('beforeend', str);
+                            (i == res.data.children.length - 1) ? after = data.name : "";
+                        }
+                    });
+                } else {
+                    reddit.hot(name).limit(25).fetch(function (res) {
+                        for(var i = 0; i < res.data.children.length; i++) {
+                            var data = res.data.children[i].data;
+                            var str =   "<tr>" +
+                                    "<td rowspan='2'>" +
+                                    "<img width='70px' height='70px' class='img-rounded' src='" + data.thumbnail + "'>" +
+                                    "<div><p class='text-center'><br>" + data.score + "</p></div>" +
+                                    "</td>" +
+                                    "<td><p>" + data.title + "</p></td></tr>" +
+                                    "<tr>" +
+                                    "<td><p>" + data.num_comments + " comments</p><p>by " + data.author + "</p><p>to " + data.subreddit + "</p></td>" +
+                                    "</tr>";
+                            stuff.insertAdjacentHTML('beforeend', str);
+                            (i == res.data.children.length - 1) ? after = data.name : "";
+                        }
+                    }); 
+                }
             }
             
             

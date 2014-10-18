@@ -79,11 +79,6 @@
                     }
                 });
             } else {
-                var p = document.createElement("p");
-                p.setAttribute("class", "text-center");
-                p.setAttribute("id", "loading");
-                p.innerText = "Loading...";
-                stuff.appendChild(p);
                 reddit.hot(name).limit(25).fetch(function (res) {
                     for(var i = 0; i < res.data.children.length; i++) {
                         var data = res.data.children[i].data;
@@ -92,8 +87,6 @@
                         (i == res.data.children.length - 1) ? after = data.name : "";
                     }
                 });
-                /*var loading = document.getElementById("loading");
-                stuff.removeChild(loading);*/
             }
         }
         

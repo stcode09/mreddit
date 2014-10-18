@@ -67,7 +67,12 @@
         
         function loadContent(name, newSubreddit, more) {
             
-            window.location.href = window.location.href;
+            var loc = window.location.href;
+            var start = loc.indexOf("#");
+            var end = loc.length;
+            if(loc.contains("#")) {
+                location.hash = loc.substring(start, end);
+            }
             
             if(newSubreddit) {
                 document.getElementById("stuff").innerHTML = "";

@@ -24,7 +24,7 @@
     <script>
     
         function loadSubreddit() {
-            var str = document.getElementById("subreddit").innerText;
+            var str = document.getElementById("subreddit").value;
             alert(str);
             if(str != '') {
                 loadContent(str, true);

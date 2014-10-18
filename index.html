@@ -28,11 +28,12 @@
         window.onscroll = function(ev) {
             if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
                 var str = document.getElementById("heading").innerText;
-                alert(str);
-                if(str == 'front page') {
-                    loadContent('front page', false, true);
+                if(str != 'front page') {
+                    alert('Here');
+                    loadContent(str, false, true);
                 } else {
-                    loadConent(str, false, true);
+                    alert('Here 2');
+                    loadConent('front page', false, true);
                 }
             }
         };

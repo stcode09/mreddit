@@ -25,7 +25,12 @@
     
         window.onscroll = function(ev) {
             if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-            alert("you're at the bottom of the page");
+                var str = document.getElementById("heading").innerText;
+                if(str == 'front page') {
+                    loadContent('', false);
+                } else {
+                    loadConent(str, false);
+                }
             }
         };
     
@@ -190,11 +195,6 @@
               </tbody>
         </table>
         <!-- /.row -->
-        
-        <ul class="pager">
-            <li><a href="#">Previous</a></li>
-            <li><a href="#">Next</a></li>
-        </ul>
         
         <hr>
         

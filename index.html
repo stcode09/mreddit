@@ -29,7 +29,7 @@
             if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
                 var str = document.getElementById("heading").innerText;
                 if(str == 'front page') {
-                    loadContent('', false, true);
+                    loadContent('front page', false, true);
                 } else {
                     loadConent(str, false, true);
                 }
@@ -49,8 +49,8 @@
                 document.getElementById("stuff").innerHTML = "";
             }
             
-            if(name == '') {
-                document.getElementById("heading").innerText = "front page";
+            if(name == 'front page') {
+                document.getElementById("heading").innerText = name;
                 var stuff = document.getElementById("stuff");
                 if(more) {
                     reddit.hot().after(after).limit(25).fetch(function (res) {
@@ -90,7 +90,6 @@
             } else {
                 document.getElementById("heading").innerText = name;
                 var stuff = document.getElementById("stuff");
-                alert('Here');
                 if(more) {
                     reddit.hot(name).after(after).limit(25).fetch(function (res) {
                         for(var i = 0; i < res.data.children.length; i++) {
@@ -152,7 +151,7 @@
 
 </head>
 
-<body onload="loadContent('', false, false)">
+<body onload="loadContent('front page', false, false)">
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->

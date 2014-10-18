@@ -82,7 +82,7 @@
                 reddit.hot(name).limit(25).fetch(function (res) {
                     for(var i = 0; i < res.data.children.length; i++) {
                         var data = res.data.children[i].data;
-                        var str = writeHTML(data);
+                        var str = writeHTML(data, i);
                         stuff.insertAdjacentHTML('beforeend', str);
                         (i == res.data.children.length - 1) ? after = data.name : "";
                     }

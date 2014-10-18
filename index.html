@@ -31,26 +31,42 @@
             
             if(name == '') {
                 document.getElementById("heading").innerText = "front page";
+                var stuff = document.getElementById("stuff");
+                reddit.hot().limit(25).fetch(function (res) {
+                    for(var i = 0; i < res.data.children.length; i++) {
+                        var data = res.data.children[i].data;
+                        var str =   "<tr>" +
+                                    "<td rowspan='2'>" +
+                                    "<img width='70px' height='70px' class='img-rounded' src='" + data.thumbnail + "'>" +
+                                    "<div><p class='text-center'><br>" + data.score + "</p></div>" +
+                                    "</td>" +
+                                    "<td><p>" + data.title + "</p></td></tr>" +
+                                    "<tr>" +
+                                    "<td><p>" + data.num_comments + " comments</p><p>by " + data.author + "</p><p>to " + data.subreddit + "</p></td>" +
+                                    "</tr>";
+                        stuff.insertAdjacentHTML('beforeend', str);
+                    }
+                });
             } else {
                 document.getElementById("heading").innerText = name;
+                var stuff = document.getElementById("stuff");
+                reddit.hot(name).limit(25).fetch(function (res) {
+                    for(var i = 0; i < res.data.children.length; i++) {
+                        var data = res.data.children[i].data;
+                        var str =   "<tr>" +
+                                    "<td rowspan='2'>" +
+                                    "<img width='70px' height='70px' class='img-rounded' src='" + data.thumbnail + "'>" +
+                                    "<div><p class='text-center'><br>" + data.score + "</p></div>" +
+                                    "</td>" +
+                                    "<td><p>" + data.title + "</p></td></tr>" +
+                                    "<tr>" +
+                                    "<td><p>" + data.num_comments + " comments</p><p>by " + data.author + "</p><p>to " + data.subreddit + "</p></td>" +
+                                    "</tr>";
+                        stuff.insertAdjacentHTML('beforeend', str);
+                    }
+                });
             }
             
-            var stuff = document.getElementById("stuff");
-            reddit.hot(((name == '') ? : name)).limit(25).fetch(function (res) {
-                for(var i = 0; i < res.data.children.length; i++) {
-                    var data = res.data.children[i].data;
-                    var str =   "<tr>" +
-                                "<td rowspan='2'>" +
-                                "<img width='70px' height='70px' class='img-rounded' src='" + data.thumbnail + "'>" +
-                                "<div><p class='text-center'><br>" + data.score + "</p></div>" +
-                                "</td>" +
-                                "<td><p>" + data.title + "</p></td></tr>" +
-                                "<tr>" +
-                                "<td><p>" + data.num_comments + " comments</p><p>by " + data.author + "</p><p>to " + data.subreddit + "</p></td>" +
-                                "</tr>";
-                    stuff.insertAdjacentHTML('beforeend', str);
-                }
-            });
             
             /*      <tr>
                   <td rowspan="2">

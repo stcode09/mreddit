@@ -90,8 +90,8 @@
             } else {
                 document.getElementById("heading").innerText = name;
                 var stuff = document.getElementById("stuff");
+                alert('Here');
                 if(more) {
-                    alert('Here');
                     reddit.hot(name).after(after).limit(25).fetch(function (res) {
                         for(var i = 0; i < res.data.children.length; i++) {
                             var data = res.data.children[i].data;

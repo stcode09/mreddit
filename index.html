@@ -60,6 +60,12 @@
             return str;
         }
         
+        function showLoading(stuff) {
+            var img = document.createElement("img");
+            img.setAttribute("src", "http://i.imgur.com/m1fR7ef.gif");
+            stuff.appendChild(img);
+        }
+        
         function loadContent(name, newSubreddit, more) {
             
             if(newSubreddit) {
@@ -78,6 +84,7 @@
                     }
                 });
             } else {
+                showLoading(stuff);
                 reddit.hot(name).limit(25).fetch(function (res) {
                     for(var i = 0; i < res.data.children.length; i++) {
                         var data = res.data.children[i].data;

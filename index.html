@@ -29,9 +29,9 @@
             if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
                 var str = document.getElementById("heading").innerText;
                 if(str == 'front page') {
-                    loadContent('', false);
+                    loadContent('', false, true);
                 } else {
-                    loadConent(str, false);
+                    loadConent(str, false, true);
                 }
             }
         };
@@ -39,7 +39,7 @@
         function loadSubreddit() {
             var str = document.getElementById("subreddit").value;
             if(str != '') {
-                loadContent(str, true);
+                loadContent(str, true, false);
             }
         }
         
@@ -54,9 +54,9 @@
                 var stuff = document.getElementById("stuff");
                 if(more) {
                     reddit.hot().after(after).limit(25).fetch(function (res) {
-                    for(var i = 0; i < res.data.children.length; i++) {
-                        var data = res.data.children[i].data;
-                        var str =   "<tr>" +
+                        for(var i = 0; i < res.data.children.length; i++) {
+                            var data = res.data.children[i].data;
+                            var str =   "<tr>" +
                                     "<td rowspan='2'>" +
                                     "<img width='70px' height='70px' class='img-rounded' src='" + data.thumbnail + "'>" +
                                     "<div><p class='text-center'><br>" + data.score + "</p></div>" +
@@ -65,15 +65,15 @@
                                     "<tr>" +
                                     "<td><p>" + data.num_comments + " comments</p><p>by " + data.author + "</p><p>to " + data.subreddit + "</p></td>" +
                                     "</tr>";
-                        stuff.insertAdjacentHTML('beforeend', str);
-                        (i == res.data.children.length - 1) ? after = data.name : "";
+                            stuff.insertAdjacentHTML('beforeend', str);
+                            (i == res.data.children.length - 1) ? after = data.name : "";
                         }
                     });
                 } else {
-                reddit.hot().limit(25).fetch(function (res) {
-                    for(var i = 0; i < res.data.children.length; i++) {
-                        var data = res.data.children[i].data;
-                        var str =   "<tr>" +
+                    reddit.hot().limit(25).fetch(function (res) {
+                        for(var i = 0; i < res.data.children.length; i++) {
+                            var data = res.data.children[i].data;
+                            var str =   "<tr>" +
                                     "<td rowspan='2'>" +
                                     "<img width='70px' height='70px' class='img-rounded' src='" + data.thumbnail + "'>" +
                                     "<div><p class='text-center'><br>" + data.score + "</p></div>" +
@@ -82,9 +82,9 @@
                                     "<tr>" +
                                     "<td><p>" + data.num_comments + " comments</p><p>by " + data.author + "</p><p>to " + data.subreddit + "</p></td>" +
                                     "</tr>";
-                        stuff.insertAdjacentHTML('beforeend', str);
-                        (i == res.data.children.length - 1) ? after = data.name : "";
-                    }
+                            stuff.insertAdjacentHTML('beforeend', str);
+                            (i == res.data.children.length - 1) ? after = data.name : "";
+                        }
                     });
                 }
             } else {
@@ -131,7 +131,7 @@
 
 </head>
 
-<body onload="loadContent('', false)">
+<body onload="loadContent('', false, false)">
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->

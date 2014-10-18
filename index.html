@@ -41,7 +41,7 @@
         
         function writeHTML(data) {
             var thumb;
-            if(data.thumbnail == 'self' || data.thumbnail == undefined) {
+            if(data.thumbnail == 'self' || data.thumbnail == '') {
                 thumb = "http://www.reddit.com/static/self_default2.png";
             } else if(data.thumbnail == 'nsfw') {
                 thumb = "http://www.reddit.com/static/nsfw2.png"
@@ -53,7 +53,7 @@
                         "<img width='70px' height='70px' class='img-rounded' src='" + thumb + "'>" +
                         "<div><p class='text-center' style='font-size:16px'><br>" + data.score + "</p></div>" +
                         "</td>" +
-                        "<td><p style='font-size:15px'>" + data.title + " " + data.thumbnail + "</p></td></tr>" +
+                        "<td><p style='font-size:15px'>" + data.title + " " + thumb + " " + data.thumbnail + "</p></td></tr>" +
                         "<tr>" +
                         "<td><p>by " + "<b style='color: #afb3b9;'>" + data.author + "</b></p><p>to " + "<b style='color: #afb3b9;'>" + data.subreddit + "</b></p><p><b style='color: #afb3b9;'>" + data.num_comments + " comments</b></p></td>" +
                         "</tr>";

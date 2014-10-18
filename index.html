@@ -104,7 +104,7 @@
                                     "<td><p>" + data.num_comments + " comments</p><p>by " + data.author + "</p><p>to " + data.subreddit + "</p></td>" +
                                     "</tr>";
                             stuff.insertAdjacentHTML('beforeend', str);
-                            (i == res.data.children.length - 1) ? after = data.name : "";
+                            (i == res.data.children.length - 1) ? /*after = data.name*/ alert(data.name) : "";
                         }
                     });
                 } else {
@@ -121,7 +121,7 @@
                                     "<td><p>" + data.num_comments + " comments</p><p>by " + data.author + "</p><p>to " + data.subreddit + "</p></td>" +
                                     "</tr>";
                             stuff.insertAdjacentHTML('beforeend', str);
-                            (i == res.data.children.length - 1) ? after = data.name : "";
+                            (i == res.data.children.length - 1) ? /*after = data.name*/ alert(data.name) : "";
                         }
                     }); 
                 }

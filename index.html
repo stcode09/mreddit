@@ -70,9 +70,8 @@
             var loc = window.location.href;
             var start = loc.indexOf("#");
             if(start != -1) {
-                alert('Here');
-                var end = loc.length;
-                window.location.hash = loc.substring(start, end);
+                alert(loc.substring(start, loc.length));
+                location.hash = loc.substring(start, end);
             }
             
             if(newSubreddit) {

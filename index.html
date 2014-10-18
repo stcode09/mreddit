@@ -25,7 +25,9 @@
     
         function loadSubreddit() {
             var str = document.getElementById("subreddit").innerText;
-            document.write(str);
+            if(str != '') {
+                loadContent(str, true);
+            }
         }
         
         function loadContent(name, subreddit) {

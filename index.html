@@ -62,8 +62,14 @@
         
         function showLoading(stuff) {
             var center = document.createElement("center");
+            center.setAttribute("id", "loading");
             center.innerText = "Loading...";
             stuff.appendChild(center);
+        }
+        
+        function hideLoading(stuff) {
+            var loading = document.getElementById("loading");
+            stuff.removeChild(loading);
         }
         
         function loadContent(name, newSubreddit, more) {
@@ -84,11 +90,12 @@
                     }
                 });
             } else {
-                showLoading(stuff);
                 reddit.hot(name).limit(25).fetch(function (res) {
                     for(var i = 0; i < res.data.children.length; i++) {
+                        showLoading(stuff);
                         var data = res.data.children[i].data;
                         var str = writeHTML(data);
+                        removeLoading(stuff);
                         stuff.insertAdjacentHTML('beforeend', str);
                         (i == res.data.children.length - 1) ? after = data.name : "";
                     }

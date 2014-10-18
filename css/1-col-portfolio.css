@@ -14,7 +14,13 @@ body {
     font-weight: 300;
 }
 
-a {
+a:link {
+    color:inherit;
+}
+a:hover {
+    color:inherit;
+}
+a:active {
     color:inherit;
 }
 

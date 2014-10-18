@@ -23,8 +23,13 @@
     
     <script>
         
-        function loadContent(name) {
-            if(name == "") {
+        function loadContent(name, subreddit) {
+            
+            if(subreddit) {
+                document.getElementById("stuff").innerHTML = "";
+            }
+            
+            if(name == '') {
                 document.getElementById("heading").innerText = "front page";
             } else {
                 document.getElementById("heading").innerText = name;
@@ -43,7 +48,7 @@
                                 "<tr>" +
                                 "<td><p>" + data.num_comments + " comments</p><p>by " + data.author + "</p><p>to " + data.subreddit + "</p></td>" +
                                 "</tr>";
-                    stuff.insertAdjacentHTML( 'beforeend', str );
+                    stuff.insertAdjacentHTML('beforeend', str);
                 }
             });
             
@@ -70,7 +75,7 @@
 
 </head>
 
-<body onload="loadContent('')">
+<body onload="loadContent('', false)">
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -99,7 +104,7 @@
                 <form class="navbar-form navbar-left" role="search">
                 <div class="input-group input-group">
                     <input id="subreddit" type="text" class="form-control" placeholder="Subreddit">
-                    <span class="input-group-addon">Go</span>
+                    <span class="input-group-addon" onclick="loadContent('aww', true)">Go</span>
                 </div>
                 </form>
             </div>

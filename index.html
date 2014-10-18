@@ -22,6 +22,8 @@
     <script src="js/reddit.min.js"></script>
     
     <script>
+        
+        var after;
     
         window.onscroll = function(ev) {
             if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
@@ -41,9 +43,9 @@
             }
         }
         
-        function loadContent(name, subreddit) {
+        function loadContent(name, newSubreddit) {
             
-            if(subreddit) {
+            if(newSubreddit) {
                 document.getElementById("stuff").innerHTML = "";
             }
             
@@ -63,6 +65,7 @@
                                     "<td><p>" + data.num_comments + " comments</p><p>by " + data.author + "</p><p>to " + data.subreddit + "</p></td>" +
                                     "</tr>";
                         stuff.insertAdjacentHTML('beforeend', str);
+                        alert(data.after);
                     }
                 });
             } else {

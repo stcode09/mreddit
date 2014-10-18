@@ -22,6 +22,11 @@
     <script src="js/reddit.min.js"></script>
     
     <script>
+    
+        function loadSubreddit() {
+            var str = document.getElementById("subreddit").innerText;
+            document.write(str);
+        }
         
         function loadContent(name, subreddit) {
             
@@ -120,7 +125,7 @@
                 <form class="navbar-form navbar-left" role="search">
                 <div class="input-group input-group">
                     <input id="subreddit" type="text" class="form-control" placeholder="Subreddit">
-                    <span class="input-group-addon" onclick="loadContent('aww', true)">Go</span>
+                    <span class="input-group-addon" onclick="loadSubreddit()">Go</span>
                 </div>
                 </form>
             </div>

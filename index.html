@@ -41,7 +41,7 @@
         
         function writeHTML(data) {
             var thumb;
-            if(data.thumbnail == 'self' || data.thumbnail == '') {
+            if(data.thumbnail == 'self' || data.thumbnail == '' || data.thumbnail == 'default') {
                 thumb = 'http://i.imgur.com/0rwsz12.png';
             } else if(data.thumbnail == 'nsfw') {
                 thumb = 'http://i.imgur.com/Ypzn6g3.png';
@@ -50,7 +50,7 @@
             }
             var str =   "<tr>" +
                         "<td rowspan='2'>" +
-                        "<img width='70px' height='50px' class='img-rounded' src='" + thumb + "'>" +
+                        "<img width='70px' max-height='70px' class='img-rounded' src='" + thumb + "'>" +
                         "<div><p class='text-center' style='font-size:16px'><br>" + data.score + "</p></div>" +
                         "</td>" +
                         "<td><p style='font-size:15px'>" + data.title + "</p></td></tr>" +

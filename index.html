@@ -96,7 +96,7 @@
             var loc = window.location.href;
             var start = loc.indexOf("#");
             if(start != -1) {
-                location.hash = loc.substring(start, end);
+                location.hash = loc.substring(start+1, end);
             }
             
         }

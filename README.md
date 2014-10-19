@@ -1,2 +1,5 @@
-mreddit
+<a href="http://stcode09.github.io/safepass/" >mReddit</a>
 =======
+
+<h2> Info </h2>
+mReddit is a simple reddit client written in javascript that presents content in a mobile friendly fashion. Under the hood, it uses Reddit API helper to pull data from reddit. The application displays the hottest posts from the front page and allows the user to navigate to other subreddits as well. Twitter Bootstrap is used for the layout configurations.  

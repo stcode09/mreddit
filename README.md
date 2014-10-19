@@ -6,3 +6,8 @@ mReddit is a simple reddit client written in Javascript that presents content in
 <br>
 <br>
 Tested and works best on Firefox for Android.
+
+<h2> Screenshots </h2>
+
+<img src="/img/screen1.png" width="50%" height="50%"/>
+<img src="/img/screen2.png" width="50%" height="50%"/>

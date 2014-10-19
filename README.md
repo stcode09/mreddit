@@ -9,5 +9,5 @@ Tested and works best on Firefox for Android.
 
 <h2> Screenshots </h2>
 
-<img src="/img/screen1.png" width="30%" height="30%"/>
-<img src="/img/screen2.png" width="30%" height="30%"/>
+<img src="/img/screen1.png" width="35%" height="35%"/>
+<img src="/img/screen2.png" width="35%" height="35%"/>

@@ -43,7 +43,7 @@
             window.location.href = url;
         }
         
-        function writeHTML(data, i) {
+        function writeHTML(data) {
             var thumb;
             if(data.thumbnail == 'self' || data.thumbnail == '' || data.thumbnail == 'default') {
                 thumb = 'http://i.imgur.com/0rwsz12.png';
@@ -59,7 +59,7 @@
                         "</td>" +
                         "<td><a href='" + data.url + "'><p style='font-size:15px'>" + data.title + "</p></a></td></tr>" +
                         "<tr>" +
-                        "<td><p>by " + "<b style='color: #afb3b9;'>" + data.author + "</b></p><p>to " + "<b style='color: #afb3b9;' onclick='goTo(&quot;http://www.reddit.com/r/" + data.subreddit + "&quot;)'> r/" + data.subreddit + "</b></p><p><b style='color: #afb3b9;'>" + data.num_comments + " comments</b></p></td>" +
+                        "<td><p>by " + "<b style='color: #afb3b9;'>" + data.author + "</b></p><p>to " + "<b style='color: #afb3b9;' onclick='goTo(&quot;http://www.reddit.com/r/" + data.subreddit + "&quot;)'> /r/" + data.subreddit + "</b></p><p><b style='color: #afb3b9;'>" + data.num_comments + " comments</b></p></td>" +
                         "</tr>";
             return str;
         }
@@ -77,7 +77,7 @@
                 reddit.hot(name).after(after).limit(25).fetch(function (res) {
                     for(var i = 0; i < res.data.children.length; i++) {
                         var data = res.data.children[i].data;
-                        var str = writeHTML(data, i);
+                        var str = writeHTML(data);
                         stuff.insertAdjacentHTML('beforeend', str);
                         (i == res.data.children.length - 1) ? after = data.name : "";
                     }
@@ -86,7 +86,7 @@
                 reddit.hot(name).limit(25).fetch(function (res) {
                     for(var i = 0; i < res.data.children.length; i++) {
                         var data = res.data.children[i].data;
-                        var str = writeHTML(data, i);
+                        var str = writeHTML(data);
                         stuff.insertAdjacentHTML('beforeend', str);
                         (i == res.data.children.length - 1) ? after = data.name : "";
                     }

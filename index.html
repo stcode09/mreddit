@@ -24,18 +24,19 @@
     <script>
         
         var after;
+        var filter;
     
         window.onscroll = function(ev) {
             if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
                 var str = document.getElementById("heading").innerText;
-                loadContent(str, false, true);
+                loadContent(str, false, true, 'hot');
             }
         };
     
         function loadSubreddit() {
             var str = document.getElementById("subreddit").value;
             if(str != '') {
-                loadContent(str, true, false);
+                loadContent(str, true, false, 'hot');
             }
         }
         
@@ -65,7 +66,7 @@
         }
         
         
-        function loadContent(name, newSubreddit, more) {
+        function loadContent(name, newSubreddit, more, filter) {
             
             if(newSubreddit) {
                 document.getElementById("stuff").innerHTML = "";
@@ -74,23 +75,47 @@
             document.getElementById("heading").innerText = name;
             var stuff = document.getElementById("stuff");
             if(more) {
-                reddit.hot(name).after(after).limit(25).fetch(function (res) {
-                    for(var i = 0; i < res.data.children.length; i++) {
-                        var data = res.data.children[i].data;
-                        var str = writeHTML(data);
-                        stuff.insertAdjacentHTML('beforeend', str);
-                        (i == res.data.children.length - 1) ? after = data.name : "";
-                    }
-                });
+                if(filter == 'hot') {
+                    reddit.hot(name).after(after).limit(25).fetch(function (res) {
+                        for(var i = 0; i < res.data.children.length; i++) {
+                            var data = res.data.children[i].data;
+                            var str = writeHTML(data);
+                            stuff.insertAdjacentHTML('beforeend', str);
+                            (i == res.data.children.length - 1) ? after = data.name : "";
+                        }
+                    });
+                }
+                if(filter == 'new') {
+                    reddit.new(name).after(after).limit(25).fetch(function (res) {
+                        for(var i = 0; i < res.data.children.length; i++) {
+                            var data = res.data.children[i].data;
+                            var str = writeHTML(data);
+                            stuff.insertAdjacentHTML('beforeend', str);
+                            (i == res.data.children.length - 1) ? after = data.name : "";
+                        }
+                    });
+                }
             } else {
-                reddit.hot(name).limit(25).fetch(function (res) {
-                    for(var i = 0; i < res.data.children.length; i++) {
-                        var data = res.data.children[i].data;
-                        var str = writeHTML(data);
-                        stuff.insertAdjacentHTML('beforeend', str);
-                        (i == res.data.children.length - 1) ? after = data.name : "";
-                    }
-                });
+                if(filter == 'hot') {
+                    reddit.hot(name).limit(25).fetch(function (res) {
+                        for(var i = 0; i < res.data.children.length; i++) {
+                            var data = res.data.children[i].data;
+                            var str = writeHTML(data);
+                            stuff.insertAdjacentHTML('beforeend', str);
+                            (i == res.data.children.length - 1) ? after = data.name : "";
+                        }
+                    });
+                }
+                if(filter == 'new') {
+                    reddit.new(name).limit(25).fetch(function (res) {
+                        for(var i = 0; i < res.data.children.length; i++) {
+                            var data = res.data.children[i].data;
+                            var str = writeHTML(data);
+                            stuff.insertAdjacentHTML('beforeend', str);
+                            (i == res.data.children.length - 1) ? after = data.name : "";
+                        }
+                    });
+                }
             }
         }
         
@@ -105,7 +130,7 @@
 
 </head>
 
-<body onload="loadContent('front page', false, false)">
+<body onload="loadContent('front page', false, false, 'hot')">
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -125,7 +150,7 @@
                         <a href="#">hot</a>
                     </li>
                     <li>
-                        <a href="#">new</a>
+                        <a onlcick="loadContent('front page', false, false, 'new')">new</a>
                     </li>
                     <li>
                         <a href="#">top</a>
@@ -150,7 +175,7 @@
     
         <!-- Page Heading -->
         <div class="row">
-            <h1 class="page-header" id="heading">Page Heading</h1>
+            <h1 class="page-header" id="heading">mReddit</h1>
         </div>
         <!-- /.row -->
         
@@ -166,7 +191,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p class="text-center">Copyright &copy; Your Website 2014</p>
+                    <p class="text-center">View source on GitHub</p>
                 </div>
             </div>
             <!-- /.row -->

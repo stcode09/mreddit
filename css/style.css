@@ -1,0 +1,41 @@
+/*!
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+@import url(http://fonts.googleapis.com/css?family=Lato:300);
+
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    background-color: #2d2d2d;
+    font-family: 'Lato';
+    color: white;
+    font-weight: 300;
+}
+
+a:link {
+    color:inherit;
+}
+a:hover {
+    color:inherit;
+}
+a:active {
+    color:inherit;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+div.special > div[class*="col-"] {
+       padding: 0; 
+}
+
+.borderless tbody tr td, .borderless thead tr th {
+    border: none;
+}
+
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}

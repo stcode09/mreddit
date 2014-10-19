@@ -2,4 +2,10 @@
 =======
 
 <h2> Info </h2>
-mReddit is a simple reddit client written in javascript that presents content in a mobile friendly fashion. Under the hood, it uses Reddit API helper to pull data from reddit. The application displays the hottest posts from the front page and allows the user to navigate to other subreddits as well. Twitter Bootstrap is used for the layout configurations.  
+mReddit is a simple reddit client written in Javascript that presents content in a mobile friendly fashion. Under the hood, it uses Reddit API helper to pull data from reddit. The application displays the hottest posts from the front page and allows the user to navigate to other subreddits as well. Twitter Bootstrap is used for the layout configurations.
+
+<br>
+<br>
+<br>
+
+*Tested and works best on Firefox for Android. 

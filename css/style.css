@@ -1,5 +1,4 @@
 /*!
- * Start Bootstrap - 1 Col Portfolio HTML Template (http://startbootstrap.com)
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
@@ -39,8 +38,4 @@ div.special > div[class*="col-"] {
 .row {
   margin-left: 0px;
   margin-right: 0px;
-}
-
-.secondary {
-    font-size: 8px;
 }

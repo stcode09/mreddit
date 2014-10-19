@@ -1,4 +1,4 @@
-<a href="http://stcode09.github.io/safepass/" >mReddit</a>
+<a href="http://stcode09.github.io/mreddit/" >mReddit</a>
 =======
 
 <h2> Info </h2>
